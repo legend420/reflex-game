@@ -11,15 +11,15 @@
         background-color: black;
       }
       </style>
-      <p><h1 id="punteggio">hai fatto 0 punti</h1></p>
-      <h1 id="timer">hai 60 secondi rimanenti</h1>
+      <p><h1 id="punteggio">you have 0 points</h1></p>
+      <h1 id="timer">you have 60 seconds remaining</h1>
             <div id="palla" onclick="tap()" style="position:relative;background-color:red;width:30;height:30; border-radius:50%;"></div>
        <script>
          palla = document.getElementById("palla")
         punti = 0;
         function tap(){
           punti += 5
-          document.getElementById("punteggio").textContent = "hai fatto " + punti + " punti"
+          document.getElementById("punteggio").textContent = "you have " + punti + " points"
           palla.style.left = Math.random() * (1, 1300) 
           palla.style.top = Math.random() * (1,600)
           palla.stle.right = Math.random() * (1,1300)
@@ -33,7 +33,7 @@
          }
          tempo = setInterval(cambio,1000)
          function tempo_scaduto(){
-           alert("tempo scaduto")
+           alert("time's up")
            palla.style.visibility = "hidden"
          }
          i = 60
@@ -41,7 +41,7 @@
          function countdown(){
           if (i > 0){
             i--
-           document.getElementById("timer").textContent = "hai " + i + " secondi rimanenti"
+           document.getElementById("timer").textContent = "you have " + i + " seconds remaining"
          }
          }
          tempo3 = setInterval(countdown,1000)
