@@ -1,0 +1,51 @@
+<html>
+    <head>
+
+    </head>
+    <body>
+      <style>
+        h1{
+          color: white;
+        }
+      body{
+        background-color: black;
+      }
+      </style>
+      <p><h1 id="punteggio">hai fatto 0 punti</h1></p>
+      <h1 id="timer">hai 60 secondi rimanenti</h1>
+            <div id="palla" onclick="tap()" style="position:relative;background-color:red;width:30;height:30; border-radius:50%;"></div>
+       <script>
+         palla = document.getElementById("palla")
+        punti = 0;
+        function tap(){
+          punti += 5
+          document.getElementById("punteggio").textContent = "hai fatto " + punti + " punti"
+          palla.style.left = Math.random() * (1, 1300) 
+          palla.style.top = Math.random() * (1,600)
+          palla.stle.right = Math.random() * (1,1300)
+          palla.style.bottom = Math.random() * (1,1100)
+        }
+         function cambio(){
+          palla.style.left = Math.random() * (1, 1300) 
+          palla.style.top = Math.random() * (1,600)
+          palla.stle.right = Math.random() * (1,1300)
+          palla.style.bottom = Math.random() * (1,1100)
+         }
+         tempo = setInterval(cambio,1000)
+         function tempo_scaduto(){
+           alert("tempo scaduto")
+           palla.style.visibility = "hidden"
+         }
+         i = 60
+         tempo2 = setTimeout(tempo_scaduto,60100)
+         function countdown(){
+          if (i > 0){
+            i--
+           document.getElementById("timer").textContent = "hai " + i + " secondi rimanenti"
+         }
+         }
+         tempo3 = setInterval(countdown,1000)
+         
+       </script>
+    </body>
+</html>
